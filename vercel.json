@@ -1,0 +1,9 @@
+{
+  "version": 2,
+  "routes": [
+    {
+      "src": "/api/avatar-bust",
+      "dest": "/api/avatar-bust.js"
+    }
+  ]
+}
