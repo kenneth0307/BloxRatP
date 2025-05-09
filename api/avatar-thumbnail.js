@@ -1,5 +1,13 @@
 export default async function handler(req, res) {
-  const { userId, type = "avatar", isCircular = false, size = 420, format = "Png"} = req.query;
+  const {
+    userId,
+    type = "avatar",
+    isCircular = false,
+    size = 420,
+    format = "Png",
+    response: responseType = "json"
+  } = req.query;
+
   if (!userId) {
     return res.status(400).json({ error: "Missing userId" });
   }
@@ -11,12 +19,22 @@ export default async function handler(req, res) {
     const json = await response.json();
     const data = json?.data?.[0];
 
-    if (!data) {
+    if (!data || !data.imageUrl) {
       return res.status(404).json({ error: "Data not found" });
     }
 
-    res.setHeader("Access-Control-Allow-Origin", "*");
-    res.json({ data });
+    if (responseType === "image") {
+      const imageResponse = await fetch(data.imageUrl);
+      const contentType = imageResponse.headers.get("content-type");
+      const buffer = await imageResponse.arrayBuffer();
+
+      res.setHeader("Content-Type", contentType);
+      res.setHeader("Access-Control-Allow-Origin", "*");
+      res.status(200).send(Buffer.from(buffer));
+    } else {
+      res.setHeader("Access-Control-Allow-Origin", "*");
+      res.status(200).json({ data });
+    }
   } catch (error) {
     res.status(500).json({ error: "Failed to fetch from Roblox" });
   }
