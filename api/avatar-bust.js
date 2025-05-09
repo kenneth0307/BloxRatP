@@ -15,9 +15,8 @@ export default async function handler(req, res) {
       return res.status(404).json({ error: "Image not found" });
     }
 
-    // Redirect directly to the image (no JS required on frontend)
     res.setHeader("Access-Control-Allow-Origin", "*");
-    res.redirect(imageUrl);
+    res.json({ imageUrl });
   } catch (error) {
     res.status(500).json({ error: "Failed to fetch from Roblox" });
   }
