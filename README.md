@@ -18,11 +18,15 @@ A simple little API proxy for me to test Vercel, and for you to get whatever ren
 
 ```json
 {
-  "data": {
-    "targetId": 154248006,
-    "state": "Completed",
+  "userId": 154248006,
+  "username": "kayos155",
+  "displayName": "KiCKTheBucket",
+  "avatarThumbnail": {
     "imageUrl": "https://tr.rbxcdn.com/30DAY-AvatarHeadshot-9D92EA3EB8F953FBDC822282AB21FB2B-Png/150/150/AvatarHeadshot/Png/noFilter",
-    "version": "TN3"
+    "type": "avatar-headshot",
+    "size": "150",
+    "format": "Png",
+    "isCircular": "false"
   }
 }
 ```
