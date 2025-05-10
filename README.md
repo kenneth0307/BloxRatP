@@ -2,7 +2,7 @@
 
 # Blox R.A.T. Proxy
 
-A simple little API proxy for me to test Vercel, and for you to get whatever render you need of your Roblox avatar via Roblox's own API.
+A simple little API for me to test Vercel, and for you to get whatever basic info you need about someone via the Roblox API. Say "thanks" to Louie!
 
 *<sub>R.A.T. stands for Roblox Avatar Thumbnail.</sub>*
 
@@ -43,7 +43,7 @@ The Roblox user's ID. This can be found in the profile's URL.
 
 ### `type` (String):
 
-Sets what type of thumbnail is returned.
+Sets what type of avatar thumbnail is returned as the image.
 
 Options: `avatar` (default), `avatar-bust`, `avatar-headshot`.
 
@@ -51,7 +51,7 @@ Options: `avatar` (default), `avatar-bust`, `avatar-headshot`.
 
 ### `isCircular` (Boolean):
 
-Does what it says on the tin: Sets whether or not the returned image is circular.
+Sets whether or not the returned image is circular.
 
 Options: `true`, `false` (default)
 
@@ -59,7 +59,7 @@ Options: `true`, `false` (default)
 
 ### `size` (Integer):
 
-Sets what size the returned thumbnail is.
+Sets what size the returned image is.
 
 Options: `48`, `100`, `180`, `420` (default) 
 
@@ -69,7 +69,7 @@ Note: To get a full list of supported sizes, make sure to check the official API
 
 ### `format` (String):
 
-Sets what image format the returned thumbnail is.
+Sets what file format the returned image is.
 
 Options: `png` (default), `webp`, `jpeg`
 
@@ -79,7 +79,7 @@ Note: `jpeg` format is not supported for `avatar-bust` thumbnails.
 
 ### `responseType` (String):
 
-Sets whether to return an image or JSON.
+Sets whether to return an image for thing such as `<img>` elements, or JSON which includes the image URL as well as a bit more info about the user.
 
 Options: `image` (default), `json`
 

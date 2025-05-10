@@ -50,7 +50,13 @@ export default async function handler(req, res) {
       return res.status(200).json({
         userId: userJson.id,
         username: userJson.name,
-        displayName: userJson.displayName,
+        isBanned: userJson.isBanned,
+        profileInfo: {
+          created: userJson.created,
+          hasVerifiedBadge: userJson.hasVerifiedBadge,
+          displayName: userJson.displayName,
+          description: userJson.description,
+        },
         avatarThumbnail: {
           imageUrl: thumbData.imageUrl,
           type,
