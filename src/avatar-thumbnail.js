@@ -9,7 +9,7 @@ export default async function handler(req, res) {
   } = req.query;
 
   if (!userId) {
-    return res.status(400).json({ error: "Missing userId" });
+    return res.redirect(302, "https://github.com/kckarnige/BloxRatP");
   }
 
   const apiUrl = `https://thumbnails.roblox.com/v1/users/${type}?userIds=${userId}&size=${size}x${size}&format=${format}&isCircular=${isCircular}`;
@@ -41,4 +41,3 @@ export default async function handler(req, res) {
     res.status(500).json({ error: "Failed to fetch from Roblox" });
   }
 }
-document.location.href = "https://github.com/kckarnige/BloxRatP"
