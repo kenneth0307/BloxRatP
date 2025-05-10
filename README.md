@@ -20,7 +20,13 @@ A simple little API for me to test Vercel, and for you to get whatever basic inf
 {
   "userId": 154248006,
   "username": "kayos155",
-  "displayName": "KiCKTheBucket",
+  "isBanned": false,
+  "profileInfo": {
+    "created": "2016-08-20T13:07:17.787Z",
+    "hasVerifiedBadge": false,
+    "displayName": "KiCKTheBucket",
+    "description": "chezburgr"
+  },
   "avatarThumbnail": {
     "imageUrl": "https://tr.rbxcdn.com/30DAY-AvatarHeadshot-9D92EA3EB8F953FBDC822282AB21FB2B-Png/150/150/AvatarHeadshot/Png/noFilter",
     "type": "avatar-headshot",
