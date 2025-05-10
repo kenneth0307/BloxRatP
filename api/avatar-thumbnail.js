@@ -52,7 +52,6 @@ export default async function handler(req, res) {
         username: userJson.name,
         displayName: userJson.displayName,
         avatarThumbnail: {
-          customImageUrl: thumbUrl,
           imageUrl: thumbData.imageUrl,
           type,
           size,
