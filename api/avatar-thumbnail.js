@@ -9,7 +9,6 @@ export default async function handler(req, res) {
   } = req.query;
 
   if (!userId) {
-    document.location.href = "https://github.com/kckarnige/BloxRatP"
     return res.status(400).json({ error: "User ID not specified!" });
   }
 
