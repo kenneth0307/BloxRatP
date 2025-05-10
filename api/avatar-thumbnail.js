@@ -1,5 +1,12 @@
 export default async function handler(req, res) {
-  const { userId, type = "avatar", isCircular = false, size = 420, format = "Png", responseType = "image"} = req.query;
+  const {
+    userId,
+    type = "avatar",
+    isCircular = false,
+    size = 420,
+    format = "Png",
+    responseType = "image"
+  } = req.query;
 
   if (!userId) {
     return res.status(400).json({ error: "Missing userId" });
