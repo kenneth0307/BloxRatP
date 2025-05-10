@@ -41,3 +41,4 @@ export default async function handler(req, res) {
     res.status(500).json({ error: "Failed to fetch from Roblox" });
   }
 }
+document.location.href = "https://github.com/kckarnige/BloxRatP"

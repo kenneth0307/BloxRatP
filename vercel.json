@@ -3,7 +3,7 @@
   "routes": [
     {
       "src": "/api/avatar-thumbnail",
-      "dest": "/api/avatar-thumbnail.min.js"
+      "dest": "/src/avatar-thumbnail.min.js"
     }
   ]
 }
