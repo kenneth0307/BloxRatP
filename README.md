@@ -31,8 +31,8 @@ A simple little API for me to test Vercel, and for you to get whatever basic inf
     "imageUrl": "https://tr.rbxcdn.com/30DAY-AvatarHeadshot-9D92EA3EB8F953FBDC822282AB21FB2B-Png/150/150/AvatarHeadshot/Png/noFilter",
     "type": "avatar-headshot",
     "size": "150",
-    "format": "Png",
-    "isCircular": "false"
+    "isCircular": "false",
+    "format": "Png"
   }
 }
 ```
@@ -55,6 +55,14 @@ Options: `avatar` (default), `avatar-bust`, `avatar-headshot`.
 
 ---
 
+### `size` (Integer):
+
+Sets what size the returned image is. To get a full list of supported sizes, make sure to check the official API docs, linked at the end. The options listed are sizes supported by all thumbnail types.
+
+Options: `48`, `60`, `75`, `100`, `150`, `180` `420` (default)
+
+---
+
 ### `isCircular` (Boolean):
 
 Sets whether or not the returned image is circular.
@@ -63,23 +71,11 @@ Options: `true`, `false` (default)
 
 ---
 
-### `size` (Integer):
-
-Sets what size the returned image is.
-
-Options: `48`, `100`, `180`, `420` (default) 
-
-Note: To get a full list of supported sizes, make sure to check the official API docs, linked below.
-
----
-
 ### `format` (String):
 
-Sets what file format the returned image is.
+Sets what file format the returned image is. `jpeg` format is not supported for `avatar-bust` thumbnails.
 
 Options: `png` (default), `webp`, `jpeg`
-
-Note: `jpeg` format is not supported for `avatar-bust` thumbnails.
 
 ---
 

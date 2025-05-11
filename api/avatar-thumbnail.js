@@ -61,8 +61,8 @@ export default async function handler(req, res) {
           imageUrl: thumbData.imageUrl,
           type,
           size,
-          format,
-          isCircular
+          isCircular,
+          format
         }
       });
     }
