@@ -43,7 +43,7 @@ A simple little API for me to test Vercel, and for you to get whatever basic inf
 
 The Roblox user's ID. This can be found in the profile's URL.
 
-<i><span>https://www.roblox.com/users/<b>154248006</b>/profile</span></i>
+<i><span>https://</span>www.<span>roblox.</span>com/users/<b>154248006</b>/profile</i>
 
 ---
 
